@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_definitions(-DASIO_STANDALONE)
 
-if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm") 
+if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
     set(CMAKE_CXX_FLAGS "-mfpu=neon")
 endif()
 
@@ -83,10 +83,9 @@ target_link_libraries(obs-websocket
 # --- End of section ---
 
 # --- Windows-specific build settings and tasks ---
-if(WIN32)
-	set(OBS_FRONTEND_LIB "NOTFOUND" CACHE FILEPATH "OBS frontend library")
+set(OBS_FRONTEND_LIB "NOTFOUND" CACHE FILEPATH "OBS frontend library")
 	if(OBS_FRONTEND_LIB STREQUAL "NOTFOUND")
-		message(FATAL_ERROR "OBS Frontend API library not found!")
+		message(FATAL_ERROR "OBS Frontend API library not found!"))
 	endif()
 
     if(MSVC)
@@ -195,11 +194,10 @@ if(UNIX AND NOT APPLE)
 
 	file(GLOB locale_files data/locale/*.ini)
 
-    set(CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS
+     set(CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS
 		OWNER_READ OWNER_WRITE OWNER_EXECUTE
 		GROUP_READ GROUP_WRITE GROUP_EXECUTE
 		WORLD_READ WORLD_EXECUTE
-	)
 
 	if(${USE_UBUNTU_FIX})
 		install(TARGETS obs-websocket LIBRARY
